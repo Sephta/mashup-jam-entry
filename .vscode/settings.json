@@ -1,4 +1,4 @@
-﻿{
+{
     "files.exclude":
     {
         "**/.DS_Store":true,
@@ -43,6 +43,9 @@
         "**/*.meta":true,
         "**/*.prefab":true,
         "**/*.unity":true,
+        "*.csproj":true,
+        "*.vsconfig":true,
+        "*.sln":true,
         "build/":true,
         "Build/":true,
         "Library/":true,
@@ -51,6 +54,12 @@
         "Obj/":true,
         "ProjectSettings/":true,
         "temp/":true,
+        "Assets/URP":true,
+        "Assets/TexAndMats":true,
+        "Assets/Scenes":true,
+        "Assets/Prefabs":true,
+        "Assets/SO Assets":true,
+        "Assets/TextMesh Pro":true,
         "Temp/":true
     }
 }
