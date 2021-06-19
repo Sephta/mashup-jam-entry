@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   gravityDefault: {x: 0, y: -19.62}
-  gravityMultiplier: 3.125
+  gravityMultiplier: 2.72
   jumpForce: 425
   numJumps: 2
   seedPrefab: {fileID: 327123285590376748, guid: 1d5409664f50740428e93e22e32badce, type: 3}

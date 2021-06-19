@@ -61,6 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantSegmentSpritePrefab: {fileID: 6415581481047144678, guid: 523cbe3f4bceb9d40b19f4c6aaca94ec, type: 3}
-  numPlantSprites: 4
-  rotationRange: {x: -17.40468, y: 17.40468}
-  offsetRange: {x: -0.5, y: 0.5}
+  numPlantSprites: 5
+  rotationRange: {x: -180, y: 180}
+  offsetRange: {x: -0.25, y: 0.25}

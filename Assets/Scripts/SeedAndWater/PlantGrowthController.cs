@@ -17,7 +17,7 @@ public class PlantGrowthController : MonoBehaviour
 	[SerializeField, ReadOnly] private int segmentsLeftToSpawn = 0;
 	[SerializeField, Range(0f, 0.5f)] private float growthTickRate = 0f;
 	[SerializeField, ReadOnly] private float currTickTime = 0f;
-	[SerializeField, MinMaxSlider(-1f, 1f)] private Vector2 newSegmentSpawnOffset = Vector2.zero;
+	[SerializeField, MinMaxSlider(-1.75f, 1.75f)] private Vector2 newSegmentSpawnOffset = Vector2.zero;
 
 	/* ---------------------------------------------------------------- */
 	/*                           Unity Methods                          */
