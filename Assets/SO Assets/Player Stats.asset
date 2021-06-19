@@ -15,7 +15,7 @@ MonoBehaviour:
   movementSpeed: 5
   gravityDefault: {x: 0, y: -19.62}
   gravityMultiplier: 3.125
-  jumpForce: 500
+  jumpForce: 425
   numJumps: 2
   numSeeds: 3
   maxWaterLevel: 100
