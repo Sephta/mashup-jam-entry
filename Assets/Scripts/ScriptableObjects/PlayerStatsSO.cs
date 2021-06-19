@@ -24,7 +24,7 @@ public class PlayerStatsSO : ScriptableObject
 	[SerializeField] private GameObject seedPrefab = null;
 	[SerializeField] private GameObject waterPrefab = null;
 	[SerializeField] private int numSeeds = 0;
-	[SerializeField, Range(0f, 1000f)] private float maxWaterLevel = 0f;
+	[SerializeField, Range(0f, 200f)] private float maxWaterLevel = 0f;
 	[SerializeField] private float seedLaunchForce = 0f;
 	[SerializeField] private float waterLaunchForce = 0f;
 	[SerializeField, Range(0f, 1f)] private float waterLaunchRate = 0f;

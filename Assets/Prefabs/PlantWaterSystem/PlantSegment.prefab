@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 427171719312762983}
   - component: {fileID: 427171719312762980}
   - component: {fileID: 2227786729701160715}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: PlantSegment
   m_TagString: Plantable
   m_Icon: {fileID: 0}

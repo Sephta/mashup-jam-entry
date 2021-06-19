@@ -20,6 +20,9 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	[ProgressBar("Current Water Level", "mwl", EColor.Blue), Space]
 	public float currWaterLevel = 0;
 	[SerializeField, ReadOnly] private float currWaterTickTime = 0f;
+	[SerializeField] private LayerMask rayCastMask;
+	[SerializeField] private float rayCastDistance = 1f;
+	[SerializeField, ReadOnly] private bool castCheck = false;
 
 	[Space(10)]
 	[Header("Seed Configurables")]
@@ -56,6 +59,8 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 
     void Update()
 	{
+		castCheck = PlantsTooClose;
+
 		UpdateWaterTickTime();
 	
 		CheckToFireSeed();
@@ -89,11 +94,14 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	}
 
 	private bool PlayerCanFireSeed => (Input.GetKeyDown(iManager._keyBindings[InputAction.action01]) && (currSeedCount > 0));
+	private bool PlantsTooClose
+		=> Physics2D.Raycast(this.transform.position, GetLaunchDirection(), rayCastDistance, rayCastMask);
+
 	private void CheckToFireSeed()
 	{
 		if (iManager == null) return;
 
-		if (PlayerCanFireSeed)
+		if (PlayerCanFireSeed )
 		{
 			LaunchProjectile(_playerStats.SeedPrefab, _playerStats.SeedLaunchForce);
 			UpdateSeedCount(-1f);
@@ -106,7 +114,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	{
 		if (iManager == null) return;
 
-		if (PlayerCanFireWater && PlayerHasWaterToFire)
+		if (PlayerCanFireWater && PlayerHasWaterToFire && !PlantsTooClose)
 		{
 			LaunchProjectile(_playerStats.WaterPrefab, _playerStats.WaterLaunchForce);
 			ResetWaterTickTime();

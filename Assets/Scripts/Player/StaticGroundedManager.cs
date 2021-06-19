@@ -12,6 +12,7 @@ public class StaticGroundedManager : MonoBehaviour
     [ReadOnly] public bool isGrounded = false;
     [Space, SerializeField] private bool _debug = false;
     [SerializeField] private LayerMask _mask;
+    [SerializeField] private LayerMask _mask2;
 
     void Awake()
     {
@@ -43,7 +44,7 @@ public class StaticGroundedManager : MonoBehaviour
     {
         if (_debug) Debug.Log("TriggerStay");
 
-        isGrounded = other != null && (((1 << other.gameObject.layer) & _mask) != 0);
+        isGrounded = other != null && ((((1 << other.gameObject.layer) & _mask) != 0) || (((1 << other.gameObject.layer) & _mask2) != 0));
     }
 
     private void OnTriggerExit2D(Collider2D other)

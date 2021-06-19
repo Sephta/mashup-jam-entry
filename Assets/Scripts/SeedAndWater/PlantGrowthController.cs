@@ -11,6 +11,7 @@ public class PlantGrowthController : MonoBehaviour
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
 	[SerializeField, Expandable, Required] private PlantGrowthStatsSO _pls = null;
+	[SerializeField] private Lean.Pool.LeanGameObjectPool leanPool = null;
 	[SerializeField, Required] private GameObject plantSegment = null;
 	[SerializeField, Range(0f, 25f)] private int numSegmentsToSpwan = 0;
 	[SerializeField, ReadOnly] private int segmentsLeftToSpawn = 0;
@@ -27,6 +28,8 @@ public class PlantGrowthController : MonoBehaviour
 
     void Start()
 	{
+		leanPool = GameObject.FindObjectOfType<Lean.Pool.LeanGameObjectPool>();
+
 		InitializePlantGrowthController();
 
 		currTickTime = growthTickRate;
@@ -63,7 +66,9 @@ public class PlantGrowthController : MonoBehaviour
 
 	private void SpawnInitialPlantSegment()
 	{
-		GameObject refr = Instantiate(plantSegment, this.transform.position, Quaternion.identity, this.transform);
+		// GameObject refr = Instantiate(plantSegment, this.transform.position, Quaternion.identity, this.transform);
+		// Lean.Pool.LeanPool.Spawn(plantSegment, leanPool, );
+		leanPool.Spawn(this.transform.position, Quaternion.identity, this.transform);
 	}
 
 	private void SpawnNewPlantSegment()
@@ -71,10 +76,12 @@ public class PlantGrowthController : MonoBehaviour
 		float xPosOffset = Random.Range(newSegmentSpawnOffset.x, newSegmentSpawnOffset.y);
 		float yPosOffset = Random.Range(newSegmentSpawnOffset.x, newSegmentSpawnOffset.y);
 		
-		GameObject refr = Instantiate(plantSegment,
-									  this.transform.position + new Vector3(xPosOffset, yPosOffset, 0f),
-									  Quaternion.identity,
-									  this.transform);
+		// GameObject refr = Instantiate(plantSegment,
+		// 							  this.transform.position + new Vector3(xPosOffset, yPosOffset, 0f),
+		// 							  Quaternion.identity,
+		// 							  this.transform);
+		
+		leanPool.Spawn(this.transform.position + new Vector3(xPosOffset, yPosOffset, 0f), Quaternion.identity, this.transform);
 	}
 
 	/* ---------------------------------------------------------------- */

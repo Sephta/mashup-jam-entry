@@ -10,8 +10,10 @@ public class WaterProjectileHandler : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
+	[SerializeField] private Lean.Pool.LeanGameObjectPool leanPool = null;
 	[SerializeField] private GameObject waterParticleSystem = null;
 	[SerializeField, Required] private GameObject plantSegmentPrefab = null;
+	[SerializeField, ReadOnly] private Transform plantGrowthParent = null;
 
 	[SerializeField, Tag, Required] private string tagToDetect;
 	[SerializeField] private float _deathTime = 0f;
@@ -26,6 +28,9 @@ public class WaterProjectileHandler : MonoBehaviour
 
     void Start()
 	{
+		leanPool = GameObject.FindObjectOfType<Lean.Pool.LeanGameObjectPool>();
+		plantGrowthParent = GameObject.Find("~PlantGrowthParent").transform;
+
 		currDeathTimer = _deathTime;
 	}
 
@@ -56,7 +61,8 @@ public class WaterProjectileHandler : MonoBehaviour
 	{
 		if (plantSegmentPrefab == null) return;
 
-		GameObject refr = Instantiate(plantSegmentPrefab, this.transform.position, Quaternion.identity);
+		// GameObject refr = Instantiate(plantSegmentPrefab, this.transform.position, Quaternion.identity);
+		leanPool.Spawn(this.transform.position, Quaternion.identity, plantGrowthParent);
 	}
 
 	private void DestroySelf(bool InstaniateParticles = false)
