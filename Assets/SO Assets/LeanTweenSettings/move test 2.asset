@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71650f94baea834c81e3736e839ced3, type: 3}
-  m_Name: Player Stats
+  m_Script: {fileID: 11500000, guid: 0024e58abf26c9941b83ca71576236bc, type: 3}
+  m_Name: move test 2
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  gravityDefault: {x: 0, y: -9.81}
-  gravityMultiplier: 1.75
-  jumpForce: 500
-  numJumps: 2
-  numSeeds: 0
-  maxWaterLevel: 0
+  _tweenType: 0
+  _timeToTween: 1
+  _easeType: 32
+  _enableDelayTime: 0
+  _disableDelayTime: 0
+  _movePosition: {x: -800, y: 0, z: 0}

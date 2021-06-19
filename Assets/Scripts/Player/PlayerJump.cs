@@ -36,15 +36,21 @@ public class PlayerJump : MonoBehaviour
 	{
 		if (InputManager._inst != null)
 			iManager = InputManager._inst;
-		
+
 		if (StaticGroundedManager._inst != null)
 			iGrounded = StaticGroundedManager._inst;
-		
+
 		currJumpCount = _playerStats.NumJumps;
 	}
 
-	private bool PlayerCanJump => (currJumpCount > 0) && iGrounded.isGrounded;
+	/* -------------------------------------------------------------------
+	 * Allows for more expressive and readable code using the
+	 * lambda declaration operator to return a understandable bool.
+	*/
+	private bool PlayerCanJump => (currJumpCount > 0) || iGrounded.isGrounded;
 	private bool PlayerDidJump => Input.GetKeyDown(iManager._keyBindings[InputAction.jump]);
+	/* ---------------------------------------------------------------- */
+
     void Update()
 	{
 		UpdateJumpCounter();
@@ -56,6 +62,8 @@ public class PlayerJump : MonoBehaviour
 			_rb.velocity = new Vector2(_rb.velocity.x,
 									   _playerStats.JumpForce * Time.fixedDeltaTime);
 		}
+
+		_rb.velocity += (_rb.velocity.y < 0) ? _playerStats.GravityDefault * _playerStats.GravityMultiplier * Time.fixedDeltaTime : _playerStats.GravityDefault * Time.fixedDeltaTime;
 	}
 
 	// void FixedUpdate() {}
