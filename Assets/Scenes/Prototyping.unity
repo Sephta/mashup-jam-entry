@@ -331,6 +331,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 11400000, guid: e858ccf32d4533f4f90cc7344beeb790, type: 2}
   currWaterLevel: 0
+  waterParticles01: {fileID: 1674259169103896162, guid: a4c822a48e77e6d4e9adcd08e42976ff, type: 3}
+  waterParticles02: {fileID: 6371594578543068839, guid: fc7d0064acd4b934b9e99161ebc2c1c4, type: 3}
   seedProjectile: {fileID: 327123285590376748, guid: 1d5409664f50740428e93e22e32badce, type: 3}
   launchPoint: {fileID: 1891998774}
   iManager: {fileID: 0}
@@ -491,7 +493,7 @@ GameObject:
   - component: {fileID: 775372298}
   - component: {fileID: 775372300}
   - component: {fileID: 775372299}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MossyCobbleTest
   m_TagString: Plantable
   m_Icon: {fileID: 0}
@@ -805,7 +807,7 @@ GameObject:
   - component: {fileID: 1295158730}
   - component: {fileID: 1295158732}
   - component: {fileID: 1295158731}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MossyCobbleTest (1)
   m_TagString: Plantable
   m_Icon: {fileID: 0}

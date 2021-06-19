@@ -19,6 +19,9 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	[Header("Water Configurables")]
 	[ProgressBar("Current Water Level", "mwl", EColor.Blue)]
 	public float currWaterLevel = 0;
+	
+	[SerializeField] private GameObject waterParticles01 = null;
+	[SerializeField] private GameObject waterParticles02 = null;
 
 	[Space(25)]
 	[Header("Seed Configurables")]
@@ -54,6 +57,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
     void Update()
 	{
 		CheckToFireSeed();
+		CheckToFireWater();
 	}
 
 	// void FixedUpdate() {}
@@ -85,6 +89,25 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		Rigidbody2D refrRB = refr.GetComponent<Rigidbody2D>();
 
 		refrRB.AddForce(GetLaunchDirection() * _playerStats.LaunchForce, ForceMode2D.Impulse);
+	}
+
+	private void CheckToFireWater()
+	{
+		if (iManager == null) return;
+
+		if (Input.GetKeyDown(iManager._keyBindings[InputAction.action02]))
+		{
+			LaunchWater();
+		}
+	}
+
+	private void LaunchWater()
+	{
+		GameObject refr1 = Instantiate(waterParticles01, this.transform.position, Quaternion.identity);
+		GameObject refr2 = Instantiate(waterParticles02, this.transform.position, Quaternion.identity);
+
+		Destroy(refr1, 3f);
+		Destroy(refr2, 3f);
 	}
 
 	private Vector3 GetLaunchDirection()
