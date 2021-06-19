@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantGrowthPrefab: {fileID: 8121866990624936622, guid: 05bfccd4b5fca9a499b1adc1d60d7809, type: 3}
+  plantGrowthParent: {fileID: 0}
   tagToDetect: Plantable
   _deathTime: 5
   currDeathTimer: 0

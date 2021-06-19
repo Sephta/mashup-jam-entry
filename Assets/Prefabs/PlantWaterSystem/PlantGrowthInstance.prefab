@@ -45,3 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pls: {fileID: 11400000, guid: d831112d27b1f55488c9b9c8dccdd58e, type: 2}
   plantSegment: {fileID: 427171719312762981, guid: ee4e8ac25832f8b4b8221ed5e7b4004e, type: 3}
+  numSegmentsToSpwan: 10
+  segmentsLeftToSpawn: 0
+  growthTickRate: 0.125
+  currTickTime: 0
+  newSegmentSpawnOffset: {x: -1, y: 1}
