@@ -22,7 +22,8 @@ public class PlayerStatsSO : ScriptableObject
 
 	[Header("Seed + Water Stats")]
 	[SerializeField] private int numSeeds = 0;
-	[SerializeField, Range(0f, 100f)] private float maxWaterLevel = 0f;
+	[SerializeField, Range(0f, 1000f)] private float maxWaterLevel = 0f;
+	[SerializeField] private float launchForce = 0f;
 
 
 	/* ---------------------------------------------------------------- */
@@ -35,5 +36,5 @@ public class PlayerStatsSO : ScriptableObject
 	public int NumJumps => numJumps;
 	public int NumSeeds => numSeeds;
 	public float MaxWaterLevel => maxWaterLevel;
-
+	public float LaunchForce => launchForce;
 }

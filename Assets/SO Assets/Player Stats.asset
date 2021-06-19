@@ -17,5 +17,6 @@ MonoBehaviour:
   gravityMultiplier: 1.75
   jumpForce: 500
   numJumps: 2
-  numSeeds: 0
-  maxWaterLevel: 0
+  numSeeds: 3
+  maxWaterLevel: 100
+  launchForce: 10
