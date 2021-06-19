@@ -5,13 +5,15 @@ using UnityEngine;
 using NaughtyAttributes;
 
 
-public class PlantGrowthController : MonoBehaviour
+public class PlantSegmentHandler : MonoBehaviour
 {
 	/* ---------------------------------------------------------------- */
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
-	[SerializeField, Expandable, Required] private PlantGrowthStatsSO _pls = null;
-	[SerializeField, Required] private GameObject plantSegment = null;
+	[SerializeField, Required] private GameObject plantSegmentSpritePrefab = null;
+	[SerializeField, Range(0f, 10f)] private int numPlantSprites = 0;
+	[SerializeField, MinMaxSlider(-180f, 180f)] private Vector2 rotationRange = Vector2.zero;
+	[SerializeField, MinMaxSlider(-1f, 1f)] private Vector2 offsetRange = Vector2.zero;
 
 	/* ---------------------------------------------------------------- */
 	/*                           Unity Methods                          */
@@ -22,7 +24,7 @@ public class PlantGrowthController : MonoBehaviour
 
     void Start()
 	{
-		InitializePlantGrowthController();
+		InitializePlantSegment();
 	}
 
     // void Update() {}
@@ -33,16 +35,27 @@ public class PlantGrowthController : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	/*                          Private Methods                         */
 	/* ---------------------------------------------------------------- */
-	private void InitializePlantGrowthController()
+	private void InitializePlantSegment()
 	{
-		if (plantSegment == null) return;
+		if (plantSegmentSpritePrefab == null) return;
 
-		SpawnInitialPlantSegment();
+		for (int i = 0; i < numPlantSprites; i++)
+		{
+			SpawnPlantSegmentSprites();	
+		}
 	}
 
-	private void SpawnInitialPlantSegment()
+	private void SpawnPlantSegmentSprites()
 	{
-		GameObject refr = Instantiate(plantSegment, this.transform.position, Quaternion.identity, this.transform);
+		float randomXPos = Random.Range(offsetRange.x, offsetRange.y);
+		float randomYPos = Random.Range(offsetRange.x, offsetRange.y);
+
+		float randomRot = Random.Range(rotationRange.x, rotationRange.y);
+
+		GameObject refr = Instantiate(plantSegmentSpritePrefab, 
+									  this.transform.position + new Vector3(randomXPos, randomYPos, 0f),
+									  Quaternion.Euler(0f, 0f, randomRot),
+									  this.transform);
 	}
 
 	/* ---------------------------------------------------------------- */

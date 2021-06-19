@@ -11,8 +11,20 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
 	[SerializeField, Expandable, Required] private PlayerStatsSO _playerStats = null;
+
+	// For use with the ProgressBar NaughtyAttribute
+	private float mwl => _playerStats.MaxWaterLevel;
+
+	[Space(25)]
+	[Header("Water Configurables")]
+	[ProgressBar("Current Water Level", "mwl", EColor.Blue)]
+	public float currWaterLevel = 0;
+
+	[Space(25)]
+	[Header("Seed Configurables")]
 	[SerializeField, Required] private GameObject seedProjectile = null;
 	[SerializeField, Required] private Transform launchPoint = null;
+	[Space(25)]
 
 	[SerializeField, ReadOnly] private InputManager iManager = null;
 
@@ -35,6 +47,8 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	{
 		if (InputManager._inst != null)
 			iManager = InputManager._inst;
+
+		currWaterLevel = _playerStats.MaxWaterLevel;
 	}
 
     void Update()

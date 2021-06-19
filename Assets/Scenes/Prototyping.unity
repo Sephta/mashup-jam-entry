@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 11400000, guid: e858ccf32d4533f4f90cc7344beeb790, type: 2}
+  currWaterLevel: 0
   seedProjectile: {fileID: 327123285590376748, guid: 1d5409664f50740428e93e22e32badce, type: 3}
   launchPoint: {fileID: 1891998774}
   iManager: {fileID: 0}
