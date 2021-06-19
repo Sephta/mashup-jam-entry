@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 75108be48bb30bc47976b7f513c1ab12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ceb5b848db75eb748963547b4f9799cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sr: {fileID: 6415581481047144679}
   plantSprites:
-  - {fileID: 21300000, guid: ceb5b848db75eb748963547b4f9799cf, type: 3}
+  - {fileID: 21300000, guid: 57a425b6bf41ade4bb8653d240ced809, type: 3}
+  - {fileID: 21300000, guid: 9d79651ac12f8684db8cdce0f7c8227b, type: 3}
+  - {fileID: 21300000, guid: 531db18e8c92f9846a4c04b8749d861f, type: 3}
 --- !u!114 &8428629568071395647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a226742c309e7f44921690e7142c9a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rectTransform: {fileID: 0}
   _tweenSettings: {fileID: 11400000, guid: 46573c2b6b76a124897485e9700598a4, type: 2}
   OnCompleteAction:
     m_PersistentCalls:
