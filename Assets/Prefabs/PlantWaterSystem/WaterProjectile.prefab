@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterParticleSystem: {fileID: 0}
+  plantSegmentPrefab: {fileID: 427171719312762981, guid: ee4e8ac25832f8b4b8221ed5e7b4004e, type: 3}
   tagToDetect: Plantable
   _deathTime: 5
   currDeathTimer: 0

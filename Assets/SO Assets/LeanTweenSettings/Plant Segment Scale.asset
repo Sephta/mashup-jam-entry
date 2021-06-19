@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcb086ef9559d43478f6ecf3dd796318, type: 3}
-  m_Name: scale test
+  m_Name: Plant Segment Scale
   m_EditorClassIdentifier: 
   _tweenType: 2
-  _timeToTween: 1
-  _easeType: 4
+  _timeToTween: 0.75
+  _easeType: 30
   _enableDelayTime: 0
   _disableDelayTime: 0
-  _startScaleValue: {x: 1, y: 1, z: 1}
-  _scaleValue: {x: 2, y: 2, z: 2}
+  _startScaleValue: {x: 0, y: 0, z: 0}
+  _scaleValue: {x: 1, y: 1, z: 1}

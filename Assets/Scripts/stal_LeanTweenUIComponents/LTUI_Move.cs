@@ -26,10 +26,9 @@ public class LTUI_Move : TweenWrapperComponent
 #region Unity_Monobehavior_Methods
 	void Awake()
 	{
-		_rectTransform = GetComponent<RectTransform>();
 		_componentMaster = GetComponent<UIComponent>();
 
-		_cachedStartPosition = _rectTransform.localPosition;
+		_cachedStartPosition = this.transform.localPosition;
 	}
 
     // void Start() {}
@@ -54,11 +53,18 @@ public class LTUI_Move : TweenWrapperComponent
 	/* ---------------------------------------------------------------- */
 	public override void TweenTo()
 	{
+
+	}
+
+	public override void TweenTo(bool useRectTransform = true)
+	{
 		if (_tweenSettings == null)
 		{
 			Debug.LogWarning("[WARNING] LeanTweenMoveSettingsSO, '_tweenSettings', on " + this.gameObject.name + " is null.");
 			return;
 		}
+
+		RectTransform _rectTransform = this.transform as RectTransform;
 
 		LeanTween.move(_rectTransform, _cachedStartPosition + _tweenSettings.MovePosition, _tweenSettings.TimeToTween)
 			.setDelay(_tweenSettings.EnableDelayTime)
@@ -73,6 +79,8 @@ public class LTUI_Move : TweenWrapperComponent
 			Debug.LogWarning("[WARNING] LeanTweenMoveSettingsSO, '_tweenSettings', on " + this.gameObject.name + " is null.");
 			return;
 		}
+
+		RectTransform _rectTransform = this.transform as RectTransform;
 
 		if (shouldDisableObject)
 		{

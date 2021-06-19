@@ -10,9 +10,11 @@ public class LeanTweenScaleSettingsSO : LeanTweenSettingsSO
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
 	[Header("Scale Settings")]
-	[SerializeField] private Vector3 _scaleValue     = Vector3.zero;
+	[SerializeField] private Vector3 _startScaleValue = Vector3.zero;
+	[SerializeField] private Vector3 _scaleValue      = Vector3.zero;
 
-	public Vector3 ScaleValue     => _scaleValue;
+	public Vector3 StartScaleValue => _startScaleValue;
+	public Vector3 ScaleValue      => _scaleValue;
 
 	/* ---------------------------------------------------------------- */
 	/*                          Private Methods                         */

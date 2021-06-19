@@ -10,6 +10,8 @@ public class UIComponent : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	[Tooltip("The starting active state when entering playmode.")]
 	[SerializeField] private bool _startState = false;
+	[SerializeField] private bool _isUsingRectTransform = true;
+	[SerializeField] private bool _tweenOnStart = false;
 	
 	[Tooltip("Sets the active state to false when tweening back to default state.")]
 	[SerializeField] private bool _objectShouldDisableOnReset = true;
@@ -27,7 +29,14 @@ public class UIComponent : MonoBehaviour
 		SetActiveState(_startState);
 	}
 
-    // void Start() {}
+    void Start()
+	{
+		if (_tweenOnStart)
+		{
+			TweenToStartState();
+		}
+	}
+
     // void Update() {}
 	// void FixedUpdate() {}
 #endregion
@@ -65,7 +74,7 @@ public class UIComponent : MonoBehaviour
 		foreach (var tweener in _tweens)
 		{
 			SetActiveState(true);
-			tweener.TweenTo();
+			tweener.TweenTo(useRectTransform: _isUsingRectTransform);
 		}
 	}
 	

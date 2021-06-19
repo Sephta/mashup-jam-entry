@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6415581481047144676}
   - component: {fileID: 6415581481047144679}
   - component: {fileID: 920133338}
+  - component: {fileID: 8428629568071395647}
+  - component: {fileID: 386462221750124050}
   m_Layer: 0
   m_Name: PlantSegmentSprite
   m_TagString: Untagged
@@ -98,3 +100,39 @@ MonoBehaviour:
   _sr: {fileID: 6415581481047144679}
   plantSprites:
   - {fileID: 21300000, guid: ceb5b848db75eb748963547b4f9799cf, type: 3}
+--- !u!114 &8428629568071395647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415581481047144678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20f5d06515146d438b1f05430ad9bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startState: 1
+  _isUsingRectTransform: 0
+  _tweenOnStart: 1
+  _objectShouldDisableOnReset: 1
+  _tweens: []
+--- !u!114 &386462221750124050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415581481047144678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a226742c309e7f44921690e7142c9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 0}
+  _tweenSettings: {fileID: 11400000, guid: 46573c2b6b76a124897485e9700598a4, type: 2}
+  OnCompleteAction:
+    m_PersistentCalls:
+      m_Calls: []
+  _componentMaster: {fileID: 8428629568071395647}
+  _cachedStartScale: {x: 0, y: 0, z: 0}

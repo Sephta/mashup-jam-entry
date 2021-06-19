@@ -11,6 +11,7 @@ public class WaterProjectileHandler : MonoBehaviour
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
 	[SerializeField] private GameObject waterParticleSystem = null;
+	[SerializeField, Required] private GameObject plantSegmentPrefab = null;
 
 	[SerializeField, Tag, Required] private string tagToDetect;
 	[SerializeField] private float _deathTime = 0f;
@@ -41,7 +42,7 @@ public class WaterProjectileHandler : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag(tagToDetect))
 		{
-			// InstantiatePlantGrowthController();
+			InstantiatePlantGrowthSegment();
 			DestroySelf(InstaniateParticles: false);
 		}
 	}
@@ -51,6 +52,13 @@ public class WaterProjectileHandler : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	/*                          Private Methods                         */
 	/* ---------------------------------------------------------------- */
+	private void InstantiatePlantGrowthSegment()
+	{
+		if (plantSegmentPrefab == null) return;
+
+		GameObject refr = Instantiate(plantSegmentPrefab, this.transform.position, Quaternion.identity);
+	}
+
 	private void DestroySelf(bool InstaniateParticles = false)
 	{
 		if (InstaniateParticles) SpawnWaterParticles();

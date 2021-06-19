@@ -26,7 +26,6 @@ public class LTUI_Value : TweenWrapperComponent
 #region Unity_Monobehavior_Methods
 	void Awake()
 	{
-		_rectTransform = GetComponent<RectTransform>();
 		_componentMaster = GetComponent<UIComponent>();
 
 		_valueText = GetComponent<TextMeshProUGUI>();
@@ -55,6 +54,11 @@ public class LTUI_Value : TweenWrapperComponent
 	/*                           Public Methods                         */
 	/* ---------------------------------------------------------------- */
 	public override void TweenTo()
+	{
+
+	}
+
+	public override void TweenTo(bool useRectTransform = true)
 	{
 		if (_tweenSettings == null)
 		{

@@ -7,7 +7,6 @@ public abstract class TweenWrapperComponent : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
-	[SerializeField] protected RectTransform _rectTransform = null;
 
 	/* ---------------------------------------------------------------- */
 	/*                          Private Methods                         */
@@ -19,6 +18,7 @@ public abstract class TweenWrapperComponent : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 
 	public abstract void TweenTo();
+	public abstract void TweenTo(bool useRectTransform = true);
 	public abstract void TweenBack(bool shouldDisableObject = false);
 
 }

@@ -26,10 +26,12 @@ public class LTUI_Scale : TweenWrapperComponent
 #region Unity_Monobehavior_Methods
 	void Awake()
 	{
-		_rectTransform = GetComponent<RectTransform>();
+
 		_componentMaster = GetComponent<UIComponent>();
 
-		_cachedStartScale = _rectTransform.localScale;
+		LeanTweenScaleSettingsSO settings = _tweenSettings as LeanTweenScaleSettingsSO;
+		this.transform.localScale = settings.StartScaleValue;
+		_cachedStartScale = this.transform.localScale;
 	}
 
     // void Start() {}
@@ -54,16 +56,32 @@ public class LTUI_Scale : TweenWrapperComponent
 	/* ---------------------------------------------------------------- */
 	public override void TweenTo()
 	{
+
+	}
+
+	public override void TweenTo(bool useRectTransform = true)
+	{
 		if (_tweenSettings == null)
 		{
 			Debug.LogWarning("[WARNING] LeanTweenScaleSettingsSO, '_tweenSettings', on " + this.gameObject.name + " is null.");
 			return;
 		}
 
-		LeanTween.scale(_rectTransform, _tweenSettings.ScaleValue, _tweenSettings.TimeToTween)
-			.setDelay(_tweenSettings.EnableDelayTime)
-			.setEase(_tweenSettings.EaseType)
-			.setOnComplete(LTSettingsOnCompleteEventInvoke);
+		if (!useRectTransform)
+		{
+			LeanTween.scale(this.gameObject, _tweenSettings.ScaleValue, _tweenSettings.TimeToTween)
+				.setDelay(_tweenSettings.EnableDelayTime)
+				.setEase(_tweenSettings.EaseType)
+				.setOnComplete(LTSettingsOnCompleteEventInvoke);
+		}
+		else
+		{
+			RectTransform _rectTransform = this.transform as RectTransform;
+			LeanTween.scale(_rectTransform, _tweenSettings.ScaleValue, _tweenSettings.TimeToTween)
+				.setDelay(_tweenSettings.EnableDelayTime)
+				.setEase(_tweenSettings.EaseType)
+				.setOnComplete(LTSettingsOnCompleteEventInvoke);
+		}
 	}
 
 	public override void TweenBack(bool shouldDisableObject = false)
@@ -73,6 +91,8 @@ public class LTUI_Scale : TweenWrapperComponent
 			Debug.LogWarning("[WARNING] LeanTweenScaleSettingsSO, '_tweenSettings', on " + this.gameObject.name + " is null.");
 			return;
 		}
+
+		RectTransform _rectTransform = this.transform as RectTransform;
 
 		if (shouldDisableObject)
 		{
