@@ -21,9 +21,13 @@ public class PlayerStatsSO : ScriptableObject
 	[SerializeField, Range(0f, 5f)] private int numJumps = 0;
 
 	[Header("Seed + Water Stats")]
+	[SerializeField] private GameObject seedPrefab = null;
+	[SerializeField] private GameObject waterPrefab = null;
 	[SerializeField] private int numSeeds = 0;
 	[SerializeField, Range(0f, 1000f)] private float maxWaterLevel = 0f;
-	[SerializeField] private float launchForce = 0f;
+	[SerializeField] private float seedLaunchForce = 0f;
+	[SerializeField] private float waterLaunchForce = 0f;
+	[SerializeField, Range(0f, 1f)] private float waterLaunchRate = 0f;
 
 
 	/* ---------------------------------------------------------------- */
@@ -34,7 +38,11 @@ public class PlayerStatsSO : ScriptableObject
 	public float GravityMultiplier => gravityMultiplier;
 	public float JumpForce => jumpForce;
 	public int NumJumps => numJumps;
+	public GameObject SeedPrefab => seedPrefab;
+	public GameObject WaterPrefab => waterPrefab;
 	public int NumSeeds => numSeeds;
 	public float MaxWaterLevel => maxWaterLevel;
-	public float LaunchForce => launchForce;
+	public float SeedLaunchForce => seedLaunchForce;
+	public float WaterLaunchForce => waterLaunchForce;
+	public float WaterLaunchRate => waterLaunchRate;
 }

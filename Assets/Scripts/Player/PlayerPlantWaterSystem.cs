@@ -17,16 +17,14 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 
 	[Space(25)]
 	[Header("Water Configurables")]
-	[ProgressBar("Current Water Level", "mwl", EColor.Blue)]
+	[ProgressBar("Current Water Level", "mwl", EColor.Blue), Space]
 	public float currWaterLevel = 0;
-	
-	[SerializeField] private GameObject waterParticles01 = null;
-	[SerializeField] private GameObject waterParticles02 = null;
+	[SerializeField, ReadOnly] private float currWaterTickTime = 0f;
 
-	[Space(25)]
+	[Space(10)]
 	[Header("Seed Configurables")]
-	[SerializeField, Required] private GameObject seedProjectile = null;
 	[SerializeField, Required] private Transform launchPoint = null;
+	[SerializeField, ReadOnly] private int currSeedCount = 0;
 	[Space(25)]
 
 	[SerializeField, ReadOnly] private InputManager iManager = null;
@@ -52,10 +50,14 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 			iManager = InputManager._inst;
 
 		currWaterLevel = _playerStats.MaxWaterLevel;
+		ResetWaterTickTime();
+		currSeedCount = _playerStats.NumSeeds;
 	}
 
     void Update()
 	{
+		UpdateWaterTickTime();
+	
 		CheckToFireSeed();
 		CheckToFireWater();
 	}
@@ -72,48 +74,55 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		return Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
 
-	private void CheckToFireSeed()
-	{
-		if (iManager == null) return;
-
-		if (Input.GetKeyDown(iManager._keyBindings[InputAction.action01]))
-		{
-			LaunchSeed();
-		}
-	}
-
-	private void LaunchSeed()
-	{
-		GameObject refr = Instantiate(seedProjectile, launchPoint.position, Quaternion.identity);
-
-		Rigidbody2D refrRB = refr.GetComponent<Rigidbody2D>();
-
-		refrRB.AddForce(GetLaunchDirection() * _playerStats.LaunchForce, ForceMode2D.Impulse);
-	}
-
-	private void CheckToFireWater()
-	{
-		if (iManager == null) return;
-
-		if (Input.GetKeyDown(iManager._keyBindings[InputAction.action02]))
-		{
-			LaunchWater();
-		}
-	}
-
-	private void LaunchWater()
-	{
-		GameObject refr1 = Instantiate(waterParticles01, this.transform.position, Quaternion.identity);
-		GameObject refr2 = Instantiate(waterParticles02, this.transform.position, Quaternion.identity);
-
-		Destroy(refr1, 3f);
-		Destroy(refr2, 3f);
-	}
-
 	private Vector3 GetLaunchDirection()
 	{
 		return (launchPoint.position - transform.position).normalized;
 	}
+
+	private void LaunchProjectile(GameObject projectile, float forceToAdd)
+	{
+		GameObject refr = Instantiate(projectile, launchPoint.position, Quaternion.identity);
+
+		Rigidbody2D refrRB = refr.GetComponent<Rigidbody2D>();
+
+		refrRB.AddForce(GetLaunchDirection() * forceToAdd, ForceMode2D.Impulse);
+	}
+
+	private bool PlayerCanFireSeed => (Input.GetKeyDown(iManager._keyBindings[InputAction.action01]) && (currSeedCount > 0));
+	private void CheckToFireSeed()
+	{
+		if (iManager == null) return;
+
+		if (PlayerCanFireSeed)
+		{
+			LaunchProjectile(_playerStats.SeedPrefab, _playerStats.SeedLaunchForce);
+			UpdateSeedCount(-1f);
+		}
+	}
+
+	private bool PlayerCanFireWater => (Input.GetKey(iManager._keyBindings[InputAction.action02]) && (currWaterTickTime <= 0));
+	private bool PlayerHasWaterToFire => (currWaterLevel > 0);
+	private void CheckToFireWater()
+	{
+		if (iManager == null) return;
+
+		if (PlayerCanFireWater && PlayerHasWaterToFire)
+		{
+			LaunchProjectile(_playerStats.WaterPrefab, _playerStats.WaterLaunchForce);
+			ResetWaterTickTime();
+			UpdateWaterLevel(-1f);
+		}
+	}
+
+	private void UpdateWaterLevel(float delta)
+		=> currWaterLevel = Mathf.Clamp((currWaterLevel + delta), 0f, _playerStats.MaxWaterLevel);
+	
+	private void UpdateSeedCount(float delta)
+		=> currSeedCount = (int) Mathf.Clamp((currSeedCount + delta), 0, _playerStats.NumSeeds);
+
+	private void ResetWaterTickTime() => currWaterTickTime = _playerStats.WaterLaunchRate;
+	private void UpdateWaterTickTime()
+		=> currWaterTickTime = Mathf.Clamp((currWaterTickTime - Time.deltaTime), 0f, _playerStats.WaterLaunchRate);
 
 	/* ---------------------------------------------------------------- */
 	/*                           Public Methods                         */

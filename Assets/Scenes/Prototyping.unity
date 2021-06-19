@@ -331,9 +331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 11400000, guid: e858ccf32d4533f4f90cc7344beeb790, type: 2}
   currWaterLevel: 0
-  waterParticles01: {fileID: 1674259169103896162, guid: a4c822a48e77e6d4e9adcd08e42976ff, type: 3}
-  waterParticles02: {fileID: 6371594578543068839, guid: fc7d0064acd4b934b9e99161ebc2c1c4, type: 3}
-  seedProjectile: {fileID: 327123285590376748, guid: 1d5409664f50740428e93e22e32badce, type: 3}
   launchPoint: {fileID: 1891998774}
   iManager: {fileID: 0}
 --- !u!1 &569736090
@@ -402,8 +399,8 @@ Camera:
   m_GameObject: {fileID: 581287669}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
