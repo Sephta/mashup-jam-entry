@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  gravityDefault: {x: 0, y: -9.81}
-  gravityMultiplier: 1.75
+  gravityDefault: {x: 0, y: -19.62}
+  gravityMultiplier: 3.125
   jumpForce: 500
   numJumps: 2
   numSeeds: 3

@@ -62,11 +62,12 @@ public class PlayerJump : MonoBehaviour
 			_rb.velocity = new Vector2(_rb.velocity.x,
 									   _playerStats.JumpForce * Time.fixedDeltaTime);
 		}
-
-		_rb.velocity += (_rb.velocity.y < 0) ? _playerStats.GravityDefault * _playerStats.GravityMultiplier * Time.fixedDeltaTime : _playerStats.GravityDefault * Time.fixedDeltaTime;
 	}
 
-	// void FixedUpdate() {}
+	void FixedUpdate()
+	{
+		_rb.velocity += (_rb.velocity.y < 0) ? _playerStats.GravityDefault * _playerStats.GravityMultiplier * Time.fixedDeltaTime : _playerStats.GravityDefault * Time.fixedDeltaTime;
+	}
 #endregion
 
 
