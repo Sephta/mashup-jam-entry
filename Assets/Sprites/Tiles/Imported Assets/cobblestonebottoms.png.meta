@@ -1,52 +1,61 @@
 fileFormatVersion: 2
-guid: 6cb3e528daeb139489f965fbf667d75a
+guid: 1a1a7fdbbe619c64598db1933112c507
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1033639367011803224
-    second: cobblestoneplatforms_0
+      213: 3720461825476310342
+    second: cobblestonebottoms_0
   - first:
-      213: -3634477742424293100
-    second: cobblestoneplatforms_1
+      213: 8882237699000038922
+    second: cobblestonebottoms_1
   - first:
-      213: -6115642408809797235
-    second: cobblestoneplatforms_2
+      213: 5372384970675755331
+    second: cobblestonebottoms_2
   - first:
-      213: -805488811057030555
-    second: cobblestoneplatforms_3
+      213: 7587783267056689145
+    second: cobblestonebottoms_3
   - first:
-      213: 8245751001443566291
-    second: cobblestoneplatforms_4
+      213: -6275617945072027791
+    second: cobblestonebottoms_4
   - first:
-      213: -248725141245930267
-    second: cobblestoneplatforms_5
+      213: 2327748516880414616
+    second: cobblestonebottoms_5
   - first:
-      213: 8187207318816490578
-    second: cobblestoneplatforms_6
+      213: 1620164416661150955
+    second: cobblestonebottoms_6
   - first:
-      213: -7680961200828518126
-    second: cobblestoneplatforms_7
+      213: 1266400937144030447
+    second: cobblestonebottoms_7
   - first:
-      213: -2885077595696801885
-    second: cobblestoneplatforms_8
+      213: -6752152237294233256
+    second: cobblestonebottoms_8
   - first:
-      213: 2530668714558231928
-    second: cobblestoneplatforms_9
+      213: -31774360478079212
+    second: cobblestonebottoms_9
   - first:
-      213: -6754726656547273610
-    second: cobblestoneplatforms_10
+      213: 8625049940516991227
+    second: cobblestonebottoms_10
   - first:
-      213: 6020375072717459343
-    second: cobblestoneplatforms_11
+      213: 8524403205354699129
+    second: cobblestonebottoms_11
   - first:
-      213: -3898573618055110183
-    second: cobblestoneplatforms_12
+      213: 253636185748592984
+    second: cobblestonebottoms_12
   - first:
-      213: -5659358952011437967
-    second: cobblestoneplatforms_13
+      213: 2110079312342594800
+    second: cobblestonebottoms_13
   - first:
-      213: -4034945376146723147
-    second: cobblestoneplatforms_14
+      213: 3951144651495663905
+    second: cobblestonebottoms_14
+  - first:
+      213: 8721550565156455631
+    second: cobblestonebottoms_15
+  - first:
+      213: 1005923643080208050
+    second: cobblestonebottoms_16
+  - first:
+      213: 8760185605640990723
+    second: cobblestonebottoms_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -172,11 +181,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cobblestoneplatforms_0
+      name: cobblestonebottoms_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -186,18 +195,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85029902789385e00800000000000000
-      internalID: 1033639367011803224
+      spriteID: 645bae3815cb1a330800000000000000
+      internalID: 3720461825476310342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_1
+      name: cobblestonebottoms_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -207,18 +216,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4118cb2efbdbf8dc0800000000000000
-      internalID: -3634477742424293100
+      spriteID: a06fa7b802c044b70800000000000000
+      internalID: 8882237699000038922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_2
+      name: cobblestonebottoms_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -228,17 +237,143 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d89e39991afd02ba0800000000000000
-      internalID: -6115642408809797235
+      spriteID: 34996cdaaab8e8a40800000000000000
+      internalID: 5372384970675755331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_3
+      name: cobblestonebottoms_3
       rect:
         serializedVersion: 2
         x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff1199fda83d4960800000000000000
+      internalID: 7587783267056689145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1773ae58ab688e8a0800000000000000
+      internalID: -6275617945072027791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897791371f2dd4020800000000000000
+      internalID: 2327748516880414616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: becd0d4f3fafb7610800000000000000
+      internalID: 1620164416661150955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe411b151f8239110800000000000000
+      internalID: 1266400937144030447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859d7ba80598b42a0800000000000000
+      internalID: -6752152237294233256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_9
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 96
         width: 32
         height: 32
@@ -249,14 +384,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56ad46aa13452d4f0800000000000000
-      internalID: -805488811057030555
+      spriteID: 4172db2336d1f8ff0800000000000000
+      internalID: -31774360478079212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_4
+      name: cobblestonebottoms_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0f482393552b770800000000000000
+      internalID: 8625049940516991227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9793e511d83cc4670800000000000000
+      internalID: 8524403205354699129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobblestonebottoms_12
       rect:
         serializedVersion: 2
         x: 0
@@ -270,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d28d5319dace6270800000000000000
-      internalID: 8245751001443566291
+      spriteID: 859dab164c8158300800000000000000
+      internalID: 253636185748592984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_5
+      name: cobblestonebottoms_13
       rect:
         serializedVersion: 2
         x: 32
@@ -291,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e4d3554dc95c8cf0800000000000000
-      internalID: -248725141245930267
+      spriteID: 0f4b41474f1884d10800000000000000
+      internalID: 2110079312342594800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_6
+      name: cobblestonebottoms_14
       rect:
         serializedVersion: 2
         x: 64
@@ -312,35 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2540984cdadce9170800000000000000
-      internalID: 8187207318816490578
+      spriteID: 1296590602945d630800000000000000
+      internalID: 3951144651495663905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 211fe0bbb7eb76590800000000000000
-      internalID: -7680961200828518126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cobblestoneplatforms_8
+      name: cobblestonebottoms_15
       rect:
         serializedVersion: 2
         x: 0
@@ -354,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a7dd07663526f7d0800000000000000
-      internalID: -2885077595696801885
+      spriteID: fc402ceb70c290970800000000000000
+      internalID: 8721550565156455631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_9
+      name: cobblestonebottoms_16
       rect:
         serializedVersion: 2
         x: 32
@@ -375,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 875107fa9cdbe1320800000000000000
-      internalID: 2530668714558231928
+      spriteID: 2be66f84932c5fd00800000000000000
+      internalID: 1005923643080208050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobblestoneplatforms_10
+      name: cobblestonebottoms_17
       rect:
         serializedVersion: 2
         x: 64
@@ -396,92 +552,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67443a9d4e36242a0800000000000000
-      internalID: -6754726656547273610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cobblestoneplatforms_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8fc0f73b3bac8350800000000000000
-      internalID: 6020375072717459343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cobblestoneplatforms_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d1ad1d23fb75e9c0800000000000000
-      internalID: -3898573618055110183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cobblestoneplatforms_13
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1786ee8840be571b0800000000000000
-      internalID: -5659358952011437967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cobblestoneplatforms_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5be6ba6fe8ef008c0800000000000000
-      internalID: -4034945376146723147
+      spriteID: 300b8b6156e629970800000000000000
+      internalID: 8760185605640990723
       vertices: []
       indices: 
       edges: []
