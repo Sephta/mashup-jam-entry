@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 9072501173926690768}
   - component: {fileID: 6451686595370841212}
   - component: {fileID: 7341567932691760688}
+  - component: {fileID: 675580084439402015}
   m_Layer: 5
   m_Name: Water UI
   m_TagString: Untagged
@@ -165,6 +166,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &675580084439402015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2869860083391720918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6899585041ccf464a8d957fc167b93d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fill: {fileID: 1896891541759028920}
+  max: 0
+  current: 0
 --- !u!1 &7485429662385718201
 GameObject:
   m_ObjectHideFlags: 0
