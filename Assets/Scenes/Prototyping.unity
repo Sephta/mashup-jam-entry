@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 139518933}
   - component: {fileID: 139518934}
   - component: {fileID: 139518935}
+  - component: {fileID: 139518936}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -340,6 +341,19 @@ MonoBehaviour:
   launchPoint: {fileID: 1891998774}
   currSeedCount: 0
   iManager: {fileID: 0}
+--- !u!114 &139518936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139518929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401ed3383123abb4086bd2f2f094438e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneToReload: Prototyping
 --- !u!1 &408623216
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,7 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manualInput: 1
-  numActions: 7
+  numActions: 8
   _keyBindings_test:
   - action: 0
     key: 119
@@ -875,6 +889,8 @@ MonoBehaviour:
     key: 323
   - action: 11
     key: 324
+  - action: 12
+    key: 114
   trackMovement: 1
   prevDirection: {x: 0, y: 0}
   direction: {x: 0, y: 0}

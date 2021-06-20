@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tweenType: 2
   _timeToTween: 1
-  _easeType: 1
+  _easeType: 30
   _enableDelayTime: 0.25
   _disableDelayTime: 0
   _startScaleValue: {x: 0, y: 0, z: 0}

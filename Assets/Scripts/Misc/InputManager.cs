@@ -18,7 +18,8 @@ public enum InputAction
     prevItem  = 8,
     pause     = 9,
     action01  = 10,
-    action02  = 11
+    action02  = 11,
+    restart   = 12
 }
 
 #endregion
