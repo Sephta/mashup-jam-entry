@@ -12,6 +12,7 @@ public class WaterProjectileHandler : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	[SerializeField] private Lean.Pool.LeanGameObjectPool leanPool = null;
 	[SerializeField] private GameObject waterParticleSystem = null;
+	[SerializeField] private float particleSystemDestroyTime = 1f;
 	[SerializeField, Required] private GameObject plantSegmentPrefab = null;
 	[SerializeField, ReadOnly] private Transform plantGrowthParent = null;
 
@@ -48,7 +49,7 @@ public class WaterProjectileHandler : MonoBehaviour
 		if (other.gameObject.CompareTag(tagToDetect))
 		{
 			InstantiatePlantGrowthSegment();
-			DestroySelf(InstaniateParticles: false);
+			DestroySelf(InstaniateParticles: true);
 		}
 	}
 #endregion
@@ -77,6 +78,8 @@ public class WaterProjectileHandler : MonoBehaviour
 		if (waterParticleSystem == null) return;
 
 		GameObject refr = Instantiate(waterParticleSystem, this.transform.position, Quaternion.identity);
+
+		Destroy(refr, particleSystemDestroyTime);
 	}
 
 	private void UpdateDeathTimer()

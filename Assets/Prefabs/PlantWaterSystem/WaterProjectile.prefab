@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leanPool: {fileID: 0}
-  waterParticleSystem: {fileID: 0}
+  waterParticleSystem: {fileID: 2616269573180073231, guid: 56e2841d2e3508a448baf6fc7db92d58, type: 3}
   plantSegmentPrefab: {fileID: 427171719312762981, guid: ee4e8ac25832f8b4b8221ed5e7b4004e, type: 3}
   plantGrowthParent: {fileID: 0}
   tagToDetect: Plantable
