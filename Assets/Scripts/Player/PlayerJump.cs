@@ -13,6 +13,7 @@ public class PlayerJump : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	[SerializeField, ] private Rigidbody2D _rb = null;
 	[SerializeField, Expandable, Required] private PlayerStatsSO _playerStats = null;
+	[SerializeField] private ParticleSystem _dustFX = null;
 
 	[Header("Configurable Jump Data"), Space(25)]
 	[SerializeField, ReadOnly] private int currJumpCount = 0;
@@ -48,19 +49,21 @@ public class PlayerJump : MonoBehaviour
 	 * lambda declaration operator to return a understandable bool.
 	*/
 	private bool PlayerCanJump => (currJumpCount > 0) || iGrounded.isGrounded;
-	private bool PlayerDidJump => Input.GetKeyDown(iManager._keyBindings[InputAction.jump]);
+	private bool PlayerPressedJumpKey => Input.GetKeyDown(iManager._keyBindings[InputAction.jump]);
 	/* ---------------------------------------------------------------- */
 
     void Update()
 	{
 		UpdateJumpCounter();
 
-		if (PlayerCanJump && PlayerDidJump)
+		if (PlayerCanJump && PlayerPressedJumpKey)
 		{
 			currJumpCount = Mathf.Clamp((currJumpCount - 1), 0, _playerStats.NumJumps);
 
 			_rb.velocity = new Vector2(_rb.velocity.x,
 									   _playerStats.JumpForce * Time.fixedDeltaTime);
+			
+			if (_dustFX != null) _dustFX.Play();
 		}
 	}
 

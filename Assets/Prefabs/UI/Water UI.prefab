@@ -96,7 +96,7 @@ MonoBehaviour:
   current: 0
   endPosition: {x: 0, y: 0, z: 0}
   tweenTime: 1
-  easeType: 29
+  easeType: 9
   delayTime: 0.25
 --- !u!114 &6450023402050545583
 MonoBehaviour:

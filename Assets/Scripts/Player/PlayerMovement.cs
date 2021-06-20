@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 			iManager = InputManager._inst;
 	}
 
-    // void Update() {}
+    // void Update(){}
 
 	void FixedUpdate()
 	{

@@ -104,7 +104,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	{
 		if (iManager == null) return;
 
-		if (PlayerCanFireSeed )
+		if (PlayerCanFireSeed)
 		{
 			LaunchProjectile(_playerStats.SeedPrefab, _playerStats.SeedLaunchForce);
 			UpdateSeedCount(-1f);
