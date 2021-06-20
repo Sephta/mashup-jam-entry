@@ -54,7 +54,9 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 
 		currWaterLevel = _playerStats.MaxWaterLevel;
 		ResetWaterTickTime();
+
 		currSeedCount = _playerStats.NumSeeds;
+		UI_SeedDisplayHandler.GenerateSeedUI?.Invoke(_playerStats.NumSeeds);
 	}
 
     void Update()
@@ -105,6 +107,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		{
 			LaunchProjectile(_playerStats.SeedPrefab, _playerStats.SeedLaunchForce);
 			UpdateSeedCount(-1f);
+			UI_SeedDisplayHandler.UpdateSeedUI?.Invoke(currSeedCount);
 		}
 	}
 
