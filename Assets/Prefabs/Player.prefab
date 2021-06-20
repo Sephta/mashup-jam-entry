@@ -63,6 +63,8 @@ MonoBehaviour:
   _sr: {fileID: 7178993417261370982}
   _relativePoint: {fileID: 7178993417261370983}
   flipAxis: {x: 0, y: 1}
+  tweenTime: 0.3
+  easeType: 30
   iManager: {fileID: 0}
 --- !u!1 &7178993417163136471
 GameObject:
@@ -4851,7 +4853,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1081469149
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -4947,7 +4949,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1081469149
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5050,7 +5052,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1081469149
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 99
   m_Sprite: {fileID: -9016063945739215907, guid: 37ebc3034bb3ebc4a9ed1c0365251f24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5234,7 +5236,7 @@ MonoBehaviour:
   _playerStats: {fileID: 11400000, guid: e858ccf32d4533f4f90cc7344beeb790, type: 2}
   numPoints: 10
   pointSpacingValue: 0.1
-  pointsGravityScale: 0.1
+  pointsGravityScale: 0.5
   pointPrefab: {fileID: 5378505039697822611, guid: a04dc1bb16021944c9744cc69b7dd4ce, type: 3}
   pointParent: {fileID: 7178993417852838798}
   points: []
@@ -5260,7 +5262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401ed3383123abb4086bd2f2f094438e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToReload: Prototyping
+  SceneToReload: level01-prototype
 --- !u!1 &7178993418433926804
 GameObject:
   m_ObjectHideFlags: 0

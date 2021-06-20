@@ -127,7 +127,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	{
 		Vector2 result = Vector2.zero;
 
-		result = (Vector2) transform.position + (Vector2) (GetLaunchDirectionFromMouse(normalize: true) * force * t) + (pointsGravityScale * Physics2D.gravity * (t*t));
+		result = (Vector2) transform.position + (GetLaunchDirection() * force * t) + pointsGravityScale * Physics2D.gravity * (t*t);
 
 		return result;
 	}
@@ -145,20 +145,20 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		return Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
 
-	private Vector3 GetLaunchDirection(bool normalize = true)
+	private Vector2 GetLaunchDirection(bool normalize = true)
 	{
 		if (normalize)
-			return (launchPoint.position - transform.position).normalized;
+			return ((Vector2) launchPoint.position - (Vector2) transform.position).normalized;
 		else
-			return (launchPoint.position - transform.position);
+			return ((Vector2) launchPoint.position - (Vector2) transform.position);
 	}
 
-	private Vector3 GetLaunchDirectionFromMouse(bool normalize = true)
+	private Vector2 GetLaunchDirectionFromMouse(bool normalize = true)
 	{
 		if (normalize)
-			return ((playerCam.ScreenToWorldPoint(Input.mousePosition)) - launchPoint.position).normalized;
+			return (((Vector2) playerCam.ScreenToWorldPoint(Input.mousePosition)) - (Vector2) launchPoint.position).normalized;
 		else
-			return ((playerCam.ScreenToWorldPoint(Input.mousePosition)) - launchPoint.position);
+			return (((Vector2) playerCam.ScreenToWorldPoint(Input.mousePosition)) - (Vector2) launchPoint.position);
 	}
 
 	private void LaunchProjectile(GameObject projectile, float forceToAdd)
@@ -167,7 +167,8 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 
 		Rigidbody2D refrRB = refr.GetComponent<Rigidbody2D>();
 
-		refrRB.AddForce(GetLaunchDirection() * forceToAdd, ForceMode2D.Impulse);
+		// refrRB.AddForce(GetLaunchDirection() * forceToAdd, ForceMode2D.Impulse);
+		refrRB.velocity = GetLaunchDirection() * forceToAdd;
 	}
 
 	private bool PlayerCanFireSeed => (Input.GetKeyUp(iManager._keyBindings[InputAction.action01]) && (currSeedCount > 0));

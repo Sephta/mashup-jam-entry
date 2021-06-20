@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameEnd.unity
     guid: f906752014e944b49ad1d6e78fc2cd8b
+  - enabled: 1
+    path: Assets/Scenes/level01-prototype.unity
+    guid: e5b5eed02a773a24598e0e417185baf0
   m_configObjects: {}

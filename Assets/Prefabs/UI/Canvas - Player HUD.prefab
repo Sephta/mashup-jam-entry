@@ -316,7 +316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7404206691337184734, guid: 28e88fff44bd093468d213d7e34f6b70, type: 3}
       propertyPath: easeType
-      value: 30
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404206691337184734, guid: 28e88fff44bd093468d213d7e34f6b70, type: 3}
+      propertyPath: tweenTime
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7404206691337184734, guid: 28e88fff44bd093468d213d7e34f6b70, type: 3}
       propertyPath: endPosition.x
