@@ -13,6 +13,7 @@ public class LTUI_Move : TweenWrapperComponent
 	/*                          Class Variables                         */
 	/* ---------------------------------------------------------------- */
 	[SerializeField] private LeanTweenMoveSettingsSO _tweenSettings;
+	[SerializeField] private bool _useLocalPosition = false;
 
 	[Space(25)] public UnityEvent OnCompleteAction;
 	[SerializeField] private UIComponent _componentMaster = null;
@@ -28,7 +29,7 @@ public class LTUI_Move : TweenWrapperComponent
 	{
 		_componentMaster = GetComponent<UIComponent>();
 
-		_cachedStartPosition = this.transform.localPosition;
+		_cachedStartPosition = (_useLocalPosition) ? this.transform.localPosition : this.transform.position;
 	}
 
     // void Start() {}
@@ -65,11 +66,11 @@ public class LTUI_Move : TweenWrapperComponent
 		}
 
 		RectTransform _rectTransform = this.transform as RectTransform;
-
+		
 		LeanTween.move(_rectTransform, _cachedStartPosition + _tweenSettings.MovePosition, _tweenSettings.TimeToTween)
 			.setDelay(_tweenSettings.EnableDelayTime)
 			.setEase(_tweenSettings.EaseType)
-			.setOnComplete(LTSettingsOnCompleteEventInvoke);
+			.setOnComplete(LTSettingsOnCompleteEventInvoke);	
 	}
 
 	public override void TweenBack(bool shouldDisableObject = false)

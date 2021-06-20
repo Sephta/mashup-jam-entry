@@ -17,6 +17,12 @@ public class UI_WaterDisplayHandler : MonoBehaviour
 	[SerializeField] private float max = 0f;
     [SerializeField] private float current = 0f;
 
+	[Header("Lean Tween Settings")]
+	[SerializeField] private Vector3 endPosition = Vector3.zero;
+	[SerializeField] private float tweenTime = 0f;
+	[SerializeField] private LeanTweenType easeType;
+	[SerializeField] private float delayTime = 0f;
+
 	public static UnityAction<int> GenerateWaterUI;
 	public static UnityAction<int> UpdateWaterUI;
 
@@ -32,6 +38,12 @@ public class UI_WaterDisplayHandler : MonoBehaviour
 	{
 		GenerateWaterUI += InitWaterUI;
 		UpdateWaterUI += RefreshWaterUI;
+
+		RectTransform rt = this.transform as RectTransform;
+
+		LeanTween.move(rt, endPosition, tweenTime)
+			.setEase(easeType)
+			.setDelay(delayTime);
 	}
 
 	void OnDisable()
