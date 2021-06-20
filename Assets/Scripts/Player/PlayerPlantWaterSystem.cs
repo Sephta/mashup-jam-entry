@@ -60,12 +60,23 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		UI_SeedDisplayHandler.GenerateSeedUI?.Invoke(_playerStats.NumSeeds);
 	}
 
+	private bool PressingActionKeys => Input.GetKey(iManager._keyBindings[InputAction.action01]) ||
+										  Input.GetKey(iManager._keyBindings[InputAction.action02]);
     void Update()
 	{
 		castCheck = PlantsTooClose;
 
 		UpdateWaterTickTime();
 	
+		if (Input.GetKey(iManager._keyBindings[InputAction.action01]) && currSeedCount > 0)
+		{
+			FlipSpriteHandler.ToggleHeldItemVisuals?.Invoke(true);
+			FlipSpriteHandler.ChangeHeldItemSprite?.Invoke(_playerStats.SeedBag);
+		}
+		
+		if (!PressingActionKeys)
+			FlipSpriteHandler.ToggleHeldItemVisuals?.Invoke(false);
+
 		CheckToFireSeed();
 		CheckToFireWater();
 	}
@@ -96,7 +107,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		refrRB.AddForce(GetLaunchDirection() * forceToAdd, ForceMode2D.Impulse);
 	}
 
-	private bool PlayerCanFireSeed => (Input.GetKeyDown(iManager._keyBindings[InputAction.action01]) && (currSeedCount > 0));
+	private bool PlayerCanFireSeed => (Input.GetKeyUp(iManager._keyBindings[InputAction.action01]) && (currSeedCount > 0));
 	private bool PlantsTooClose
 		=> Physics2D.Raycast(this.transform.position, GetLaunchDirection(), rayCastDistance, rayCastMask);
 
@@ -120,6 +131,9 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 
 		if (PlayerCanFireWater && PlayerHasWaterToFire && !PlantsTooClose)
 		{
+			FlipSpriteHandler.ToggleHeldItemVisuals?.Invoke(true);
+			FlipSpriteHandler.ChangeHeldItemSprite?.Invoke(_playerStats.WaterCan);
+
 			LaunchProjectile(_playerStats.WaterPrefab, _playerStats.WaterLaunchForce);
 			ResetWaterTickTime();
 			UpdateWaterLevel(-1f);

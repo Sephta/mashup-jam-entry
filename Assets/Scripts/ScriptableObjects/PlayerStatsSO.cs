@@ -21,6 +21,8 @@ public class PlayerStatsSO : ScriptableObject
 	[SerializeField, Range(0f, 5f)] private int numJumps = 0;
 
 	[Header("Seed + Water Stats")]
+	[SerializeField] private Sprite seedBag = null;
+	[SerializeField] private Sprite waterCan = null;
 	[SerializeField] private GameObject seedPrefab = null;
 	[SerializeField] private GameObject waterPrefab = null;
 	[SerializeField] private int numSeeds = 0;
@@ -38,6 +40,8 @@ public class PlayerStatsSO : ScriptableObject
 	public float GravityMultiplier => gravityMultiplier;
 	public float JumpForce => jumpForce;
 	public int NumJumps => numJumps;
+	public Sprite SeedBag => seedBag;
+	public Sprite WaterCan => waterCan;
 	public GameObject SeedPrefab => seedPrefab;
 	public GameObject WaterPrefab => waterPrefab;
 	public int NumSeeds => numSeeds;
