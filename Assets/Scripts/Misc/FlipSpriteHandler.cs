@@ -15,6 +15,8 @@ public class FlipSpriteHandler : MonoBehaviour
 	[SerializeField, Required] private SpriteRenderer _sr = null;
 	[SerializeField, Required] private Transform _relativePoint = null;
 	[SerializeField] private Vector2 flipAxis = Vector2.zero;
+	[SerializeField] private float tweenTime = 0f;
+	[SerializeField] private LeanTweenType easeType;
 
 	public static UnityAction<bool> ToggleHeldItemVisuals;
 	public static UnityAction<Sprite> ChangeHeldItemSprite;
@@ -99,14 +101,14 @@ public class FlipSpriteHandler : MonoBehaviour
 
 		if (state)
 		{
-			LeanTween.scale(_sr.gameObject, Vector3.one, 0.125f)
-				.setEaseOutQuart()
+			LeanTween.scale(_sr.gameObject, Vector3.one, tweenTime)
+				.setEase(easeType)
 				.setOnStart(SetEnabledTrue);
 		}
 		else
 		{
-			LeanTween.scale(_sr.gameObject, Vector3.zero, 0.125f)
-				.setEaseOutQuart()
+			LeanTween.scale(_sr.gameObject, Vector3.zero, tweenTime)
+				.setEase(easeType)
 				.setOnComplete(SetEnabledFalse);
 		}
 	}

@@ -1023,6 +1023,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7178993417073194479, guid: 770ce325cf966194aae0424c3e1c8008, type: 3}
+      propertyPath: easeType
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178993417073194479, guid: 770ce325cf966194aae0424c3e1c8008, type: 3}
+      propertyPath: tweenTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7178993418191647104, guid: 770ce325cf966194aae0424c3e1c8008, type: 3}
       propertyPath: m_Name
       value: Player
