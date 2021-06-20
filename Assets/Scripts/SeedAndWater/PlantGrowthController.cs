@@ -13,6 +13,8 @@ public class PlantGrowthController : MonoBehaviour
 	[SerializeField, Expandable, Required] private PlantGrowthStatsSO _pls = null;
 	[SerializeField] private Lean.Pool.LeanGameObjectPool leanPool = null;
 	[SerializeField, Required] private GameObject plantSegment = null;
+	[SerializeField] private GameObject plantParticleSystem = null;
+	[SerializeField] private float particleSystemDestroyTime = 1f;
 	[SerializeField, Range(0f, 25f)] private int numSegmentsToSpwan = 0;
 	[SerializeField, ReadOnly] private int segmentsLeftToSpawn = 0;
 	[SerializeField, Range(0f, 0.5f)] private float growthTickRate = 0f;
@@ -69,6 +71,7 @@ public class PlantGrowthController : MonoBehaviour
 		// GameObject refr = Instantiate(plantSegment, this.transform.position, Quaternion.identity, this.transform);
 		// Lean.Pool.LeanPool.Spawn(plantSegment, leanPool, );
 		leanPool.Spawn(this.transform.position, Quaternion.identity, this.transform);
+		SpawnPlantParticles();
 	}
 
 	private void SpawnNewPlantSegment()
@@ -82,6 +85,15 @@ public class PlantGrowthController : MonoBehaviour
 		// 							  this.transform);
 		
 		leanPool.Spawn(this.transform.position + new Vector3(xPosOffset, yPosOffset, 0f), Quaternion.identity, this.transform);
+	}
+
+	private void SpawnPlantParticles()
+	{
+		if (plantParticleSystem == null) return;
+
+		GameObject refr = Instantiate(plantParticleSystem, this.transform.position, Quaternion.identity);
+
+		Destroy(refr, particleSystemDestroyTime);
 	}
 
 	/* ---------------------------------------------------------------- */
