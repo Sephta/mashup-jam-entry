@@ -38,6 +38,15 @@ public class SeedProjectileHandler : MonoBehaviour
 
 	// void FixedUpdate() {}
 
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.CompareTag(tagToDetect))
+		{
+			InstantiatePlantGrowthController();
+			DestroySelf();
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.CompareTag(tagToDetect))

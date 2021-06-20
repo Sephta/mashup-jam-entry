@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71650f94baea834c81e3736e839ced3, type: 3}
+  m_Name: Level 1 Player Stats
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  gravityDefault: {x: 0, y: -19.62}
+  gravityMultiplier: 2.72
+  jumpForce: 425
+  numJumps: 2
+  seedBag: {fileID: 21300000, guid: c55db6d03dd3bf4468d27d659c2331ce, type: 3}
+  waterCan: {fileID: 21300000, guid: 8415026227f0fad4cb0a6a4195e166cb, type: 3}
+  seedPrefab: {fileID: 327123285590376748, guid: 1d5409664f50740428e93e22e32badce, type: 3}
+  waterPrefab: {fileID: 9097420836880477369, guid: 321d398f33594c943ad2b424ba2488db, type: 3}
+  numSeeds: 6
+  maxWaterLevel: 32
+  seedLaunchForce: 10
+  waterLaunchForce: 10
+  waterLaunchRate: 0.1

@@ -43,8 +43,8 @@ CircleCollider2D:
   m_GameObject: {fileID: 327123285590376748}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 6200000, guid: a703fb97e5a2d2c4ca902ff0e6b458ab, type: 2}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.04, y: 0.02}
@@ -137,5 +137,5 @@ MonoBehaviour:
   plantGrowthPrefab: {fileID: 8121866990624936622, guid: 05bfccd4b5fca9a499b1adc1d60d7809, type: 3}
   plantGrowthParent: {fileID: 0}
   tagToDetect: Plantable
-  _deathTime: 5
+  _deathTime: 10000
   currDeathTimer: 0
