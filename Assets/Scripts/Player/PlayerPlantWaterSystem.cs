@@ -16,6 +16,15 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	private float mwl => _playerStats.MaxWaterLevel;
 
 	[Space(25)]
+	[Header("Predictive Path Data")]
+	[SerializeField, Range(0f, 50f)] private int numPoints = 0;
+	[SerializeField] private float pointSpacingValue = 0f;
+	[SerializeField] private float pointsGravityScale = 0.5f;
+	[SerializeField] private GameObject pointPrefab = null;
+	[SerializeField] private Transform pointParent = null;
+	[SerializeField] private List<GameObject> points = new List<GameObject>();
+
+	[Space(25)]
 	[Header("Water Configurables")]
 	[ProgressBar("Current Water Level", "mwl", EColor.Blue), Space]
 	public float currWaterLevel = 0;
@@ -58,6 +67,8 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 
 		currSeedCount = _playerStats.NumSeeds;
 		UI_SeedDisplayHandler.GenerateSeedUI?.Invoke(_playerStats.NumSeeds);
+		
+		InitializePoints();
 	}
 
 	private bool PressingActionKeys => Input.GetKey(iManager._keyBindings[InputAction.action01]) ||
@@ -70,6 +81,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	
 		if (Input.GetKey(iManager._keyBindings[InputAction.action01]) && currSeedCount > 0)
 		{
+			UpdatePointPositions(_playerStats.SeedLaunchForce);
 			FlipSpriteHandler.ToggleHeldItemVisuals?.Invoke(true);
 			FlipSpriteHandler.ChangeHeldItemSprite?.Invoke(_playerStats.SeedBag);
 		}
@@ -88,14 +100,65 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	/* ---------------------------------------------------------------- */
 	/*                          Private Methods                         */
 	/* ---------------------------------------------------------------- */
+	private void InitializePoints()
+	{
+		if (pointPrefab == null) return;
+
+		for (int i = 0; i < numPoints; i++)
+		{
+			if (pointParent != null)
+				points.Add(Instantiate(pointPrefab, transform.position, Quaternion.identity, pointParent));
+			else
+				points.Add(Instantiate(pointPrefab, transform.position, Quaternion.identity));
+		}
+	}
+
+	private void ResetPoints()
+	{
+		if (pointPrefab == null) return;
+
+		for (int i = 0; i < numPoints; i++)
+		{
+			points[i].transform.localPosition = Vector3.zero;
+		}
+	}
+
+	private Vector2 PointPosition(float t, float force)
+	{
+		Vector2 result = Vector2.zero;
+
+		result = (Vector2) transform.position + (Vector2) (GetLaunchDirectionFromMouse(normalize: true) * force * t) + (pointsGravityScale * Physics2D.gravity * (t*t));
+
+		return result;
+	}
+
+	private void UpdatePointPositions(float force)
+	{
+		for (int i = 0; i < numPoints; i++)
+		{
+			points[i].transform.position = PointPosition(i * pointSpacingValue, force);
+		}
+	}
+
 	private Vector3 GetWorldSpaceMousePosition()
 	{
 		return Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
 
-	private Vector3 GetLaunchDirection()
+	private Vector3 GetLaunchDirection(bool normalize = true)
 	{
-		return (launchPoint.position - transform.position).normalized;
+		if (normalize)
+			return (launchPoint.position - transform.position).normalized;
+		else
+			return (launchPoint.position - transform.position);
+	}
+
+	private Vector3 GetLaunchDirectionFromMouse(bool normalize = true)
+	{
+		if (normalize)
+			return ((playerCam.ScreenToWorldPoint(Input.mousePosition)) - launchPoint.position).normalized;
+		else
+			return ((playerCam.ScreenToWorldPoint(Input.mousePosition)) - launchPoint.position);
 	}
 
 	private void LaunchProjectile(GameObject projectile, float forceToAdd)
@@ -117,6 +180,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 
 		if (PlayerCanFireSeed)
 		{
+			ResetPoints();
 			LaunchProjectile(_playerStats.SeedPrefab, _playerStats.SeedLaunchForce);
 			UpdateSeedCount(-1f);
 			UI_SeedDisplayHandler.UpdateSeedUI?.Invoke(currSeedCount);
