@@ -43,17 +43,17 @@ public class PlayerMovement : MonoBehaviour
 		currSoundTime = soundTimer;
 	}
 
-    void Update()
-	{
-		UpdateSoundTimer();
+    // void Update()
+	// {
+	// 	UpdateSoundTimer();
 
-		// use audio clip with index 1
-		if (currSoundTime <= 0f && iGrounded.isGrounded)
-		{
-			PlayRunSound();
-			currSoundTime = soundTimer;
-		}
-	}
+	// 	// use audio clip with index 1
+	// 	if (currSoundTime <= 0f && iGrounded.isGrounded)
+	// 	{
+	// 		PlayRunSound();
+	// 		currSoundTime = soundTimer;
+	// 	}
+	// }
 
 	void FixedUpdate()
 	{
