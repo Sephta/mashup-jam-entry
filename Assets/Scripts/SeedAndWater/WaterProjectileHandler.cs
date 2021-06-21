@@ -49,8 +49,10 @@ public class WaterProjectileHandler : MonoBehaviour
 		if (other.gameObject.CompareTag(tagToDetect))
 		{
 			InstantiatePlantGrowthSegment();
-			DestroySelf(InstaniateParticles: true);
 		}
+		
+		if (!other.gameObject.CompareTag("Player"))
+			DestroySelf(InstaniateParticles: true);
 	}
 #endregion
 

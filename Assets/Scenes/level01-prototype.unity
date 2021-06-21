@@ -7013,6 +7013,10 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
