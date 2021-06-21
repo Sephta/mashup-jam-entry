@@ -5082,6 +5082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag_Goal_Sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 7068777607142636373, guid: 059f489f81e0bec4a8ab3cc93fc607b4, type: 3}
+      propertyPath: SceneToLoad
+      value: level04
+      objectReference: {fileID: 0}
     - target: {fileID: 7068777607142636375, guid: 059f489f81e0bec4a8ab3cc93fc607b4, type: 3}
       propertyPath: m_RootOrder
       value: 1
