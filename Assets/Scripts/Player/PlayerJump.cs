@@ -21,6 +21,8 @@ public class PlayerJump : MonoBehaviour
 	[Space(25)]
 	[SerializeField, ReadOnly] private InputManager iManager = null;
 	[SerializeField, ReadOnly] private StaticGroundedManager iGrounded = null;
+	[SerializeField, ReadOnly] private AudioManager iAudio = null;
+
 
 	/* ---------------------------------------------------------------- */
 	/*                           Unity Methods                          */
@@ -40,6 +42,9 @@ public class PlayerJump : MonoBehaviour
 
 		if (StaticGroundedManager._inst != null)
 			iGrounded = StaticGroundedManager._inst;
+
+		if (AudioManager._inst != null)
+			iAudio = AudioManager._inst;
 
 		currJumpCount = _playerStats.NumJumps;
 	}
@@ -62,7 +67,8 @@ public class PlayerJump : MonoBehaviour
 
 			_rb.velocity = new Vector2(_rb.velocity.x,
 									   _playerStats.JumpForce * Time.fixedDeltaTime);
-			
+
+			if (iAudio != null) iAudio.PlaySFX(0);
 			if (_dustFX != null) _dustFX.Play();
 		}
 	}
