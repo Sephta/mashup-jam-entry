@@ -168,11 +168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 658067155250601083, guid: a59f8221a7b421a4baaf7f4e5b162ed3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000047714046
+      value: -0.0000000476619
       objectReference: {fileID: 0}
     - target: {fileID: 658067155250601083, guid: a59f8221a7b421a4baaf7f4e5b162ed3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003558647
+      value: -0.0000000035547583
       objectReference: {fileID: 0}
     - target: {fileID: 658067155250601083, guid: a59f8221a7b421a4baaf7f4e5b162ed3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: _playerStats
       value: 
       objectReference: {fileID: 11400000, guid: 354fdf664fd2ab4468af683c115e126d, type: 2}
+    - target: {fileID: 7178993418191647113, guid: 770ce325cf966194aae0424c3e1c8008, type: 3}
+      propertyPath: SceneToReload
+      value: level04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 770ce325cf966194aae0424c3e1c8008, type: 3}
 --- !u!1 &493705241
@@ -1751,11 +1755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6303907065198021732, guid: 91abe39e672092644ac19adca7784a33, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000047714046
+      value: -0.0000000476619
       objectReference: {fileID: 0}
     - target: {fileID: 6303907065198021732, guid: 91abe39e672092644ac19adca7784a33, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003558647
+      value: -0.0000000035547583
       objectReference: {fileID: 0}
     - target: {fileID: 6303907065198021732, guid: 91abe39e672092644ac19adca7784a33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
