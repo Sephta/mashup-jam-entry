@@ -204,7 +204,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 			FlipSpriteHandler.ToggleHeldItemVisuals?.Invoke(true);
 			FlipSpriteHandler.ChangeHeldItemSprite?.Invoke(_playerStats.WaterCan);
 
-			if (iAudio != null) iAudio.PlaySFX(4);
+			if (iAudio != null) iAudio.PlaySFX(3);
 
 			LaunchProjectile(_playerStats.WaterPrefab, _playerStats.WaterLaunchForce);
 			ResetWaterTickTime();
