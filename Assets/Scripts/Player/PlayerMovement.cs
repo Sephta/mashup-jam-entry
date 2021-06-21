@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
     // void Update(){}
+	//use audio clip with index 1
 
 	void FixedUpdate()
 	{
