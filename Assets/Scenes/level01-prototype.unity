@@ -303,7 +303,7 @@ PrefabInstance:
     - target: {fileID: 7178993418191647110, guid: 770ce325cf966194aae0424c3e1c8008, type: 3}
       propertyPath: _playerStats
       value: 
-      objectReference: {fileID: 11400000, guid: 354fdf664fd2ab4468af683c115e126d, type: 2}
+      objectReference: {fileID: 11400000, guid: e858ccf32d4533f4f90cc7344beeb790, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 770ce325cf966194aae0424c3e1c8008, type: 3}
 --- !u!1 &493705241
@@ -6736,15 +6736,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4130711221364458421, guid: 79507f868be159e44a809fddfb21faf2, type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4130711221364458421, guid: 79507f868be159e44a809fddfb21faf2, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4130711221364458421, guid: 79507f868be159e44a809fddfb21faf2, type: 3}
       propertyPath: m_fontColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4130711221364458421, guid: 79507f868be159e44a809fddfb21faf2, type: 3}
       propertyPath: m_fontSizeBase
@@ -6752,7 +6752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4130711221364458421, guid: 79507f868be159e44a809fddfb21faf2, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278190080
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79507f868be159e44a809fddfb21faf2, type: 3}
