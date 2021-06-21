@@ -21,7 +21,7 @@ MonoBehaviour:
   waterCan: {fileID: 21300000, guid: 8415026227f0fad4cb0a6a4195e166cb, type: 3}
   seedPrefab: {fileID: 327123285590376748, guid: 1d5409664f50740428e93e22e32badce, type: 3}
   waterPrefab: {fileID: 9097420836880477369, guid: 321d398f33594c943ad2b424ba2488db, type: 3}
-  numSeeds: 6
+  numSeeds: 3
   maxWaterLevel: 32
   seedLaunchForce: 10
   waterLaunchForce: 10
