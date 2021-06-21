@@ -188,6 +188,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59f8221a7b421a4baaf7f4e5b162ed3, type: 3}
+--- !u!1001 &34712731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890044, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901587386263890046, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
+      propertyPath: m_Name
+      value: Killbox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b9021d660cbf9b41bf717ad450f1561, type: 3}
 --- !u!1 &92437044
 GameObject:
   m_ObjectHideFlags: 0
