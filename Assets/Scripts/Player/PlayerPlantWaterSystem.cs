@@ -40,6 +40,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	[Space(25)]
 
 	[SerializeField, ReadOnly] private InputManager iManager = null;
+	[SerializeField, ReadOnly] private AudioManager iAudio = null;
 
 	// Caching the main camera cuz I'm not sure if unity fixed "Camera.main"
 	// and made it more efficient....
@@ -60,6 +61,9 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 	{
 		if (InputManager._inst != null)
 			iManager = InputManager._inst;
+
+		if (AudioManager._inst != null)
+			iAudio = AudioManager._inst;
 
 		currWaterLevel = _playerStats.MaxWaterLevel;
 		UI_WaterDisplayHandler.GenerateWaterUI?.Invoke((int) _playerStats.MaxWaterLevel);
@@ -182,6 +186,7 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		if (PlayerCanFireSeed)
 		{
 			ResetPoints();
+			if (iAudio != null) iAudio.PlaySFX(3);
 			LaunchProjectile(_playerStats.SeedPrefab, _playerStats.SeedLaunchForce);
 			UpdateSeedCount(-1f);
 			UI_SeedDisplayHandler.UpdateSeedUI?.Invoke(currSeedCount);
@@ -198,6 +203,8 @@ public class PlayerPlantWaterSystem : MonoBehaviour
 		{
 			FlipSpriteHandler.ToggleHeldItemVisuals?.Invoke(true);
 			FlipSpriteHandler.ChangeHeldItemSprite?.Invoke(_playerStats.WaterCan);
+
+			if (iAudio != null) iAudio.PlaySFX(4);
 
 			LaunchProjectile(_playerStats.WaterPrefab, _playerStats.WaterLaunchForce);
 			ResetWaterTickTime();
