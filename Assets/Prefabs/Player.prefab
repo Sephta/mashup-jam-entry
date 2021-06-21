@@ -4853,7 +4853,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1081469149
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -4949,7 +4949,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1081469149
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5052,7 +5052,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1081469149
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 99
   m_Sprite: {fileID: -9016063945739215907, guid: 37ebc3034bb3ebc4a9ed1c0365251f24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5125,6 +5125,7 @@ GameObject:
   - component: {fileID: 7178993418191647111}
   - component: {fileID: 7178993418191647110}
   - component: {fileID: 7178993418191647113}
+  - component: {fileID: 6407679099843139946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5221,6 +5222,7 @@ MonoBehaviour:
   currJumpCount: 0
   iManager: {fileID: 0}
   iGrounded: {fileID: 0}
+  iAudio: {fileID: 0}
 --- !u!114 &7178993418191647110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5263,6 +5265,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToReload: level01-prototype
+--- !u!114 &6407679099843139946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178993418191647104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0edb755d62545944b155bc511fe4195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 7178993417522033283}
+  iManager: {fileID: 0}
+  iGrounded: {fileID: 0}
 --- !u!1 &7178993418433926804
 GameObject:
   m_ObjectHideFlags: 0

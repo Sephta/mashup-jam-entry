@@ -68,6 +68,7 @@ public class PlayerJump : MonoBehaviour
 			_rb.velocity = new Vector2(_rb.velocity.x,
 									   _playerStats.JumpForce * Time.fixedDeltaTime);
 
+			PlayerAnimationHandler.TriggerPlayerJumpAnimation?.Invoke();
 			if (iAudio != null) iAudio.PlaySFX(0);
 			if (_dustFX != null) _dustFX.Play();
 		}
