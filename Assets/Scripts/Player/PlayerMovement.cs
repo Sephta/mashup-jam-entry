@@ -14,8 +14,12 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField, ] private Rigidbody2D _rb = null;
 	[SerializeField, Expandable, Required] private PlayerStatsSO _playerStats = null;
 
+	[SerializeField] private float soundTimer = 0f;
+	[SerializeField, ReadOnly] private float currSoundTime = 0f;
+
 	[Space(25)]
 	[SerializeField, ReadOnly] private InputManager iManager = null;
+	[SerializeField, ReadOnly] private StaticGroundedManager iGrounded = null;
 
 	/* ---------------------------------------------------------------- */
 	/*                           Unity Methods                          */
@@ -32,10 +36,24 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (InputManager._inst != null)
 			iManager = InputManager._inst;
+
+		if (StaticGroundedManager._inst != null)
+			iGrounded = StaticGroundedManager._inst;
+		
+		currSoundTime = soundTimer;
 	}
 
-    // void Update(){}
-	//use audio clip with index 1
+    void Update()
+	{
+		UpdateSoundTimer();
+
+		// use audio clip with index 1
+		if (currSoundTime <= 0f && iGrounded.isGrounded)
+		{
+			PlayRunSound();
+			currSoundTime = soundTimer;
+		}
+	}
 
 	void FixedUpdate()
 	{
@@ -55,6 +73,16 @@ public class PlayerMovement : MonoBehaviour
                                    _rb.velocity.y);
 	}
 
+	private void PlayRunSound()
+	{
+		if (AudioManager._inst != null)
+			AudioManager._inst.PlaySFX(1);
+	}
+
+	private void UpdateSoundTimer()
+	{
+		currSoundTime = Mathf.Clamp((currSoundTime - Time.deltaTime), 0f, soundTimer);
+	}
 
 	/* ---------------------------------------------------------------- */
 	/*                           Public Methods                         */
