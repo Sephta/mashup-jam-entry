@@ -11,6 +11,7 @@ public class ParallaxEffect : MonoBehaviour
 
     // PRIVATE VARS
     [SerializeField] private Vector2 parallaxMultiplier = Vector2.zero;
+    [SerializeField] private bool useTextureUnitSize = true;
     [SerializeField, ReadOnly] private Vector3 lastCameraPos = Vector3.zero;
     [SerializeField, ReadOnly] private Vector2 textureUnitSize = Vector2.zero;
     [SerializeField, ReadOnly] private float initialHeight = 0f;
@@ -23,12 +24,15 @@ public class ParallaxEffect : MonoBehaviour
         
         lastCameraPos = _cam.position;
 
-        Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-        Texture2D tex = sprite.texture;
-        textureUnitSize = new Vector2(
-            tex.width / sprite.pixelsPerUnit,
-            tex.height / sprite.pixelsPerUnit
-        );
+        if (GetComponent<SpriteRenderer>() != null)
+        {
+            Sprite sprite = GetComponent<SpriteRenderer>().sprite;
+            Texture2D tex = sprite.texture;
+            textureUnitSize = new Vector2(
+                tex.width / sprite.pixelsPerUnit,
+                tex.height / sprite.pixelsPerUnit
+            );
+        }
 
         initialHeight = transform.position.y;
     }
@@ -43,6 +47,8 @@ public class ParallaxEffect : MonoBehaviour
             deltaMove.y * parallaxMultiplier.y,
             0f
         );
+
+        if (!useTextureUnitSize) return;
 
         if (Mathf.Abs(_cam.position.x - transform.position.x) >= textureUnitSize.x)
         {
