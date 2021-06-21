@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7178993417073194479}
   m_Layer: 0
   m_Name: Seed Launch Point Handler
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 7178993417163136470}
   m_Layer: 0
   m_Name: PS Jump Dust Effects
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4976,7 +4976,7 @@ GameObject:
   - component: {fileID: 7178993417522033280}
   m_Layer: 0
   m_Name: Player Visuals
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5091,7 +5091,7 @@ GameObject:
   - component: {fileID: 7178993417852838798}
   m_Layer: 0
   m_Name: Predictive Path Parent
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5236,7 +5236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 11400000, guid: e858ccf32d4533f4f90cc7344beeb790, type: 2}
-  numPoints: 10
+  numPoints: 25
   pointSpacingValue: 0.1
   pointsGravityScale: 0.5
   pointPrefab: {fileID: 5378505039697822611, guid: a04dc1bb16021944c9744cc69b7dd4ce, type: 3}
@@ -5293,7 +5293,7 @@ GameObject:
   - component: {fileID: 7178993418433926806}
   m_Layer: 0
   m_Name: Player Grounded Check
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

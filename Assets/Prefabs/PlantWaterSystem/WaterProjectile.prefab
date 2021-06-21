@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3058915388407456932}
   m_Layer: 0
   m_Name: WaterProjectile
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1081469149
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea6b8b83008a67643a4919c602e2be06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
