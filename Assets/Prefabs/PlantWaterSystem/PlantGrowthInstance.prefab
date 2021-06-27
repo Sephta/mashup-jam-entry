@@ -52,4 +52,4 @@ MonoBehaviour:
   segmentsLeftToSpawn: 0
   growthTickRate: 0.125
   currTickTime: 0
-  newSegmentSpawnOffset: {x: -1.5, y: 1.5}
+  newSegmentSpawnOffset: {x: -1.125, y: 1.125}

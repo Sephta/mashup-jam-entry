@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   gravityDefault: {x: 0, y: -19.62}
-  gravityMultiplier: 2.25
+  gravityMultiplier: 1.75
   jumpForce: 425
   numJumps: 2
   seedBag: {fileID: 21300000, guid: c55db6d03dd3bf4468d27d659c2331ce, type: 3}

@@ -61,8 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantSegmentSpritePrefab: {fileID: 6415581481047144678, guid: 523cbe3f4bceb9d40b19f4c6aaca94ec, type: 3}
-  plantParticleSystem: {fileID: 2210891503721243588, guid: 64fe4855703f90c40b418d70bd00e5d3, type: 3}
-  particleSystemDestroyTime: 1
-  numPlantSprites: 5
+  numPlantSprites: 4
   rotationRange: {x: -180, y: 180}
   offsetRange: {x: -0.25, y: 0.25}
